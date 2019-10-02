@@ -12,6 +12,13 @@
   position:absolute;
 }
 
+#bomb {
+  height: 32px;
+  width: 32px;
+  background-color: blue;
+  position: absolute;
+  display: none;
+}
 
 /* .badguy{
   width:32px;
