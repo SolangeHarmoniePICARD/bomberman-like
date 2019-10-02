@@ -1,3 +1,13 @@
+//début de gestion de collision
+function isCollide(a, b) {
+  return !(
+    ((a.y + a.height) < (b.y)) ||
+    (a.y > (b.y + b.height)) ||
+    ((a.x + a.width) < b.x) ||
+    (a.x > (b.x + b.width))
+  );
+}
+
 var bomb = document.getElementById("bomb");
 var limitBomb = false;
 var blastCenter = document.getElementById("blastCenter");
@@ -5,6 +15,7 @@ var blastTop = document.getElementById("blastTop");
 var blastRight = document.getElementById("blastRight");
 var blastLeft = document.getElementById("blastLeft");
 var blastBottom = document.getElementById("blastBottom");
+var colision = false;
 
 document.addEventListener("keydown", dropBomb);
 
@@ -50,6 +61,13 @@ function bombBlast() {
   blastBottom.style.display = "block";
   blastBottom.style.top = bomb.offsetTop + 32 + "px";
   blastBottom.style.left = bomb.offsetLeft + "px";
+
+  if (isCollide(blastCenter, player)) {
+    colision = true;
+  }
+  if (colision == true) {
+    player.style.display = 'none';
+  }
 }
 function blastDisapear() {
   blastCenter.style.display = "none";

@@ -33,6 +33,7 @@
   height: 32px;
   width: 32px;
   background-color: pink;
+  z-index: 3;
 }
 /* .badguy{
   width:32px;
