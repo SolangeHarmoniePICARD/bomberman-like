@@ -64,7 +64,7 @@ function bombBlast() {
   blastBottom.style.display = "block";
   blastBottom.style.top = bomb.offsetTop + 32 + "px";
   blastBottom.style.left = bomb.offsetLeft + "px";
-  if(bomb.offsetTopp + 32 == positionTop && bomb.offsetLeft == positionLeft) {
+  if(bomb.offsetTopp == positionTop && bomb.offsetLeft +30 == positionLeft) {
     player.style.display = 'none';
   }
 
