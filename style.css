@@ -5,7 +5,8 @@
   position:relative;
 }
 
-#player{
+#player{height: 60px;
+  width: 60px;
   width:32px;
   height:32px;
   background-color:green;
@@ -20,6 +21,13 @@
   display: none;
 }
 
+.blast{
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  background-color: red;
+  display: none;
+}
 /* .badguy{
   width:32px;
   height:32px;
