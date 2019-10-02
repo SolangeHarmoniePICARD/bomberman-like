@@ -1,9 +1,47 @@
-var player = document.getElementById('player');
-var moveSize = 32;
-var parentRect = document.getElementById('board').getBoundingClientRect();
-var childRect;
+var player = document.getElementById("player");
+var positionLeft = player.offsetLeft;
+var positionTop = player.offsetTop;
 
-document.addEventListener
+document.addEventListener("keydown", movePlayer);
+
+function movePlayer(){
+  var keyCode = event.keyCode;
+  //déplacement à droite
+  if (keyCode == 39) {
+    if (positionLeft < 768) {
+      positionLeft = positionLeft + 32;
+      player.style.left = positionLeft + "px";
+    }
+  }
+  
+  //déplacement à gauche
+  if (keyCode == 37) {
+    if (positionLeft > 0) {
+      positionLeft = positionLeft - 32;
+      player.style.left = positionLeft + "px";
+    }
+  }
+
+  //déplacement en haut
+  if (keyCode == 38) {
+    if (positionTop > 0) {
+      positionTop = positionTop - 32;
+      player.style.top = positionTop + "px";
+    }
+  }
+
+  // déplacement en bas
+  if (keyCode == 40) {
+    if (positionTop < 768) {
+      positionTop = positionTop + 32;
+      player.style.top = positionTop + "px";
+    }
+  }
+
+}
+
+
+
 // Handle arrows to move the player
 // document.addEventListener('keydown', function(event) {
 //
