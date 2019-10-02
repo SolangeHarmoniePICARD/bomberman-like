@@ -1,0 +1,21 @@
+#board{
+  width:800px;
+  height:800px;
+  background-color:black;
+  position:relative;
+}
+
+#player{
+  width:32px;
+  height:32px;
+  background-color:green;
+  position:absolute;
+}
+
+
+/* .badguy{
+  width:32px;
+  height:32px;
+  background-color:red;
+  position:relative;
+} */
