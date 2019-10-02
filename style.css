@@ -28,6 +28,12 @@
   background-color: red;
   display: none;
 }
+
+.enemies {
+  height: 32px;
+  width: 32px;
+  background-color: pink;
+}
 /* .badguy{
   width:32px;
   height:32px;

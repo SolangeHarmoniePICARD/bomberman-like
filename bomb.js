@@ -36,7 +36,7 @@ function bombBlast() {
   blastCenter.style.left = bomb.offsetLeft + "px";
 
   blastTop.style.display = "block";
-  blastTop.style.top = bomb.offsetTop + 32 + "px";
+  blastTop.style.top = bomb.offsetTop - 32 + "px";
   blastTop.style.left = bomb.offsetLeft + "px";
 
   blastLeft.style.display = "block";
@@ -48,9 +48,13 @@ function bombBlast() {
   blastRight.style.left = bomb.offsetLeft + "px";
 
   blastBottom.style.display = "block";
-  blastBottom.style.top = bomb.offsetTop - 32 + "px";
+  blastBottom.style.top = bomb.offsetTop + 32 + "px";
   blastBottom.style.left = bomb.offsetLeft + "px";
 }
 function blastDisapear() {
   blastCenter.style.display = "none";
+  blastLeft.style.display = "none";
+  blastRight.style.display = "none";
+  blastTop.style.display = "none";
+  blastBottom.style.display = "none";
 }
