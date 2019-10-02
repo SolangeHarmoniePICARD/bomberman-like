@@ -1,21 +1,10 @@
-//début de gestion de collision
-function isCollide(a, b) {
-  return !(
-    ((a.y + a.height) < (b.y)) ||
-    (a.y > (b.y + b.height)) ||
-    ((a.x + a.width) < b.x) ||
-    (a.x > (b.x + b.width))
-  );
-}
-
 var bomb = document.getElementById("bomb");
-var limitBomb = false;
 var blastCenter = document.getElementById("blastCenter");
 var blastTop = document.getElementById("blastTop");
 var blastRight = document.getElementById("blastRight");
 var blastLeft = document.getElementById("blastLeft");
 var blastBottom = document.getElementById("blastBottom");
-var colision = false;
+var limitBomb = false;
 
 document.addEventListener("keydown", dropBomb);
 
@@ -42,32 +31,44 @@ function bombExplod(){
 }
 
 function bombBlast() {
+  var blastCenterPositionTop = blastCenter.style.top;
+  var blastCenterPositionLeft = blastCenter.style.left;
   blastCenter.style.display = "block";
   blastCenter.style.top = bomb.offsetTop + "px";
   blastCenter.style.left = bomb.offsetLeft + "px";
+  if(bomb.offsetTopp -32 == positionTop && bomb.offsetLeft == positionLeft) {
+    player.style.display = 'none';
+  }
 
   blastTop.style.display = "block";
   blastTop.style.top = bomb.offsetTop - 32 + "px";
   blastTop.style.left = bomb.offsetLeft + "px";
+  if(bomb.offsetTopp == positionTop && bomb.offsetLeft == positionLeft) {
+    player.style.display = 'none';
+  }
 
   blastLeft.style.display = "block";
   blastLeft.style.top = bomb.offsetTop - 32 + "px";
   blastLeft.style.left = bomb.offsetLeft + "px";
+  if(bomb.offsetTopp == positionTop && bomb.offsetLeft - 32 == positionLeft) {
+    player.style.display = 'none';
+  }
 
   blastRight.style.display = "block";
   blastRight.style.top = bomb.offsetTop + 32 + "px";
   blastRight.style.left = bomb.offsetLeft + "px";
+  if(bomb.offsetTopp + 32 == positionTop && bomb.offsetLeft == positionLeft) {
+    player.style.display = 'none';
+  }
 
   blastBottom.style.display = "block";
   blastBottom.style.top = bomb.offsetTop + 32 + "px";
   blastBottom.style.left = bomb.offsetLeft + "px";
-
-  if (isCollide(blastCenter, player)) {
-    colision = true;
-  }
-  if (colision == true) {
+  if(bomb.offsetTopp + 32 == positionTop && bomb.offsetLeft == positionLeft) {
     player.style.display = 'none';
   }
+
+
 }
 function blastDisapear() {
   blastCenter.style.display = "none";
