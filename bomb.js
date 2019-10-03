@@ -35,14 +35,17 @@ function bombExplod(){
 }
 
 function bombBlast() {
-  var blastCenterPositionTop = blastCenter.style.top;
-  var blastCenterPositionLeft = blastCenter.style.left;
+  // var blastCenterPositionTop = blastCenter.style.top;
+  // var blastCenterPositionLeft = blastCenter.style.left;
   blastCenter.style.display = "block";
   blastCenter.style.top = bomb.offsetTop + "px";
   blastCenter.style.left = bomb.offsetLeft + "px";
-  if(bomb.offsetTopp == enemy0Top && bomb.offsetLeft == enemy0Left) {
+  if(bomb.offsetTopp == positionTop && bomb.offsetLeft == positionLeft) {
     player.style.display = "none";
     modal.style.display = "block";
+  }
+  if (bomb.offsetTop == enemy0Top && bomb.offsetLeft == enemy0Left){
+    enemy0.style.display = "none";
   }
 
   blastTop.style.display = "block";

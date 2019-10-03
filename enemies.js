@@ -21,13 +21,13 @@
 // elem.style.top = x + 'px';
 // elem.style.left = y + 'px';
 // }
-document.body.onload = addEnemies;
+addEnemies();
 
 function addEnemies() {
   for (var i = 0; i < 4; i++){
     var div = document.createElement('div');
     div.setAttribute('class', 'enemies');
-  
+
     var enemies = document.getElementsByClassName('enemies');
     for (var j = 0; j < enemies.length; j++) {
       div.setAttribute('id', 'enemy' + j);
